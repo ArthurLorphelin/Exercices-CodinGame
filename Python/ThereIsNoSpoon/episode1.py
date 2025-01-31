@@ -9,18 +9,16 @@ def read_input():
 
 # Fonction qui trouve le voisin à droite du noeud
 def find_right_neighbor(grid, x, y, width):
-    if x + 1 < width:
-        for neighbor_x in range(x+1, width):
-            if grid[y][neighbor_x] == '0':
-                return neighbor_x, y
+    for neighbor_x in range(x+1, width):
+        if grid[y][neighbor_x] == '0':
+            return neighbor_x, y
     return -1, -1
 
 # Fonction qui trouve le voisin en dessous du noeud
 def find_bottom_neighbor(grid, x, y, height):
-    if y + 1 < height:
-        for neighbor_y in range(y+1, height):
-            if grid[neighbor_y][x] == '0':
-                return x, neighbor_y
+    for neighbor_y in range(y+1, height):
+        if grid[neighbor_y][x] == '0':
+            return x, neighbor_y
     return -1, -1
 
 # Fonction qui parcourt la grille et affiche les coordonnées des noeuds et de leurs prochains voisins
