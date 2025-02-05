@@ -1,7 +1,8 @@
+from typing import List, Tuple, Dict
 import sys
 
 # Fonction qui lit les entrées de jeu et récupère les paramètres du jeu
-def read_input():
+def read_input() -> Tuple[int, int, Dict[int, int]]:
     nb_floors, width, nb_rounds, exit_floor, exit_pos, nb_total_clones, nb_additional_elevators, nb_elevators = map(int, input().split())
     elevators = {}
     for _ in range(nb_elevators):
@@ -11,7 +12,8 @@ def read_input():
     return exit_floor, exit_pos, elevators
 
 # Fonction qui détermine la direction dans laquelle se clone doit aller
-def determine_exit_direction(clone_floor, clone_pos, exit_floor, exit_pos, elevators):
+def determine_exit_direction(clone_floor: int, clone_pos: int, exit_floor: int, exit_pos: int,
+                             elevators: Dict[int, int]) -> str:
     if clone_floor == exit_floor:
         return "RIGHT" if clone_pos < exit_pos else "LEFT" if clone_pos > exit_pos else "WAIT"
 
@@ -24,7 +26,7 @@ def determine_exit_direction(clone_floor, clone_pos, exit_floor, exit_pos, eleva
     return "WAIT"
 
 # Boucle principale du jeu
-def process_game(exit_floor, exit_pos, elevators):
+def process_game(exit_floor: int, exit_pos: int, elevators: Dict[int, int]):
     while True:
         inputs = input().split()
         clone_floor = int(inputs[0])

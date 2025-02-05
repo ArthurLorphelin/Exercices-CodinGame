@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 # Constantes
 TUNNEL_ROOM_TOP_ENTRY = {
     1: (0, 1, "TOP"), 3: (0, 1, "TOP"), 4: (-1, 0, "RIGHT"),
@@ -16,14 +18,14 @@ TUNNEL_ROOM_RIGHT_ENTRY = {
 }
 
 # Fonction qui lit les entrées et initialise la grille
-def read_input():
+def read_input() -> List[List[str]]:
     _, height = map(int, input().split())
     grid = [input().split() for _ in range(height)]
     _ = int(input())
     return grid
 
 # Fonction qui détermine la prochaine position en fonction du type de la salle et de l'entrée
-def get_next_position(grid, x, y, pos):
+def get_next_position(grid: List[List[str]], x: int, y: int, pos: str) -> Tuple[int, int, str]:
     room_type = int(grid[y][x])
     movement_dict = {"TOP": TUNNEL_ROOM_TOP_ENTRY,
                      "LEFT": TUNNEL_ROOM_LEFT_ENTRY,

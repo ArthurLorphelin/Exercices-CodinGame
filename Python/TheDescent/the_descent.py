@@ -1,5 +1,5 @@
 # Fonction qui retourne la montagne la plus haute et son index
-def get_max_height_index():
+def get_max_height_index() -> int:
     mountain_max_h = 0
     mountain_max_index = 0
 

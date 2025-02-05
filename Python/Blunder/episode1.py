@@ -1,3 +1,4 @@
+from typing import List, Tuple, Set
 import sys
 import math
 
@@ -12,18 +13,18 @@ DIRECTION_ORDER = ["SOUTH", "EAST", "NORTH", "WEST"]
 DIRECTION_CHARS = {"S": "SOUTH", "E": "EAST", "N": "NORTH", "W": "WEST"}
 
 
-# Classe représentant le robor Blunder avec son état et sa position
+# Classe représentant le robot Blunder avec son état et sa position
 class Blunder:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.current_direction = "SOUTH"
-        self.breaker_mode = False
-        self.direction_order = DIRECTION_ORDER.copy()
-        self.index_direction = 0
+    def __init__(self, x: int, y: int):
+        self.x: int = x
+        self.y: int = y
+        self.current_direction: str = "SOUTH"
+        self.breaker_mode: bool = False
+        self.direction_order: List[str] = DIRECTION_ORDER.copy()
+        self.index_direction: int = 0
 
     # Fonction qui retourne un tuple représentant l'état complet du robot
-    def get_state(self, grid_modifications):
+    def get_state(self, grid_modifications: int):
         return (self.x, self.y, self.current_direction, self.breaker_mode, self.index_direction, grid_modifications)
 
     # Fonction qui calcule la prochaine position du robot selon sa position actuelle
@@ -36,26 +37,26 @@ class Blunder:
 class Game:
     def __init__(self):
         self.height, self.width, self.grid = self._read_input()
-        self.blunder = self._init_blunder()
-        self.exit_pos = self._find_position("$")
-        self.teleporters = self._find_teleporters()
-        self.visited_states = set()
-        self.grid_modifications = 0
-        self.moves = []
+        self.blunder: Blunder = self._init_blunder()
+        self.exit_pos: Tuple[int, int] = self._find_position("$")
+        self.teleporters: List[Tuple[int, int]] = self._find_teleporters()
+        self.visited_states: Set[Tuple[int, int, str, bool, int, int]] = set()
+        self.grid_modifications: int = 0
+        self.moves: List[str] = []
 
     # Fonction qui lit les données d'entrée
-    def _read_input(self):
+    def _read_input(self) -> Tuple[int, int, List[List[str]]]:
         height, width = map(int, input().split())
         grid = [list(input().strip()) for _ in range(height)]
         return height, width, grid
 
     # Fonction qui trouve la position initiale du Blunder et crée l'instance
-    def _init_blunder(self):
+    def _init_blunder(self) -> Blunder:
         x, y = self._find_position("@")
         return Blunder(x, y)
 
     # Fonction qui trouve la position d'un caractère spécifique dans la grille
-    def _find_position(self, char):
+    def _find_position(self, char: str) -> Tuple[int, int]:
         for y in range(self.height):
             for x in range(self.width):
                 if self.grid[y][x] == char:
@@ -63,14 +64,14 @@ class Game:
         return -1, -1
 
     # Fonction qui trouve toutes les positions des téléporteurs dans la grille et les retourne dans une liste
-    def _find_teleporters(self):
+    def _find_teleporters(self) -> List[Tuple[int, int]]:
         return [(x, y) for y in range(self.height)
                 for x in range(self.width) if self.grid[y][x] == "T"]
 
     # Fonction qui vérifie si une position donnée contient un obstacle
-    def is_obstacle(self, x, y):
+    def is_obstacle(self, x: int, y: int) -> bool:
         cell = self.grid[y][x]
-        return (cell == "#" or (cell == "X" and not self.blunder.breaker_mode))
+        return cell == "#" or (cell == "X" and not self.blunder.breaker_mode)
 
     # Fonction qui gère les effets des cases spéciales sur lesquelles se trouve
     def handle_special_tile(self):
@@ -122,11 +123,11 @@ class Game:
         self.moves.append(self.blunder.current_direction)
 
     # Fonction qui vérifie si Blunder est arrivé à la sortie
-    def is_at_exit(self):
+    def is_at_exit(self) -> bool:
         return (self.blunder.x, self.blunder.y) == self.exit_pos
 
     # Fonction qui vérifie si l'état actuel a déjà été visité (boucle infinie)
-    def check_loop(self):
+    def check_loop(self) -> bool:
         state = self.blunder.get_state(self.grid_modifications)
         if state in self.visited_states:
             return True
@@ -134,7 +135,7 @@ class Game:
         return False
 
     # Fonction qui exécute la simulation du jeu
-    def run(self):
+    def run(self) -> str:
         while not self.is_at_exit():
             self.handle_special_tile()
 

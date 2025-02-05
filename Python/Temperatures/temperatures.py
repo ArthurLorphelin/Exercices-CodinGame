@@ -1,10 +1,12 @@
+from typing import List
+
 # Fonction qui lit les températures et les retourne dans une liste
-def get_temperature_list(n):
+def get_temperature_list(n: int) -> List[int]:
     return list(map(int, input().split())) if n > 0 else []
 
 
 # Fonction qui trouve la température la plus proche de zéro
-def find_closest_temperature(temperature_list):
+def find_closest_temperature(temperature_list: List[int]) -> int:
     if not temperature_list:
         return 0
 

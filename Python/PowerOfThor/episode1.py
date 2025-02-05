@@ -1,10 +1,12 @@
+from typing import Tuple
+
 # Fonction qui lit et retourne les positions initiales de l'éclair et de Thor
-def get_initial_positions():
+def get_initial_positions() -> Tuple[int, int, int, int]:
     light_x, light_y, thor_x, thor_y = map(int, input().split())
     return light_x, light_y, thor_x, thor_y
 
 # Fonction qui détermine le mouvement de Thor vers l'éclair et retourne la direction
-def move_thor(thor_x, thor_y, light_x, light_y):
+def move_thor(thor_x: int, thor_y: int, light_x: int, light_y: int) -> Tuple[int, int, str]:
     direction = ""
 
     # Déplacement vertical

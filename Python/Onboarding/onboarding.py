@@ -6,7 +6,7 @@ def get_enemy_info():
     distance_2 = int(input())
     return enemy_1, distance_1, enemy_2, distance_2
 
-# Fonction qui retourn le nom de l'ennemi le plus proche
+# Fonction qui retourne le nom de l'ennemi le plus proche
 def find_closest_enemy(enemy_1, distance_1, enemy_2, distance_2):
     return enemy_1 if distance_1 < distance_2 else enemy_2
 
