@@ -16,7 +16,7 @@ class Link:
 class Node:
     def __init__(self, index: int):
         self.index: int = index
-        self.connected_gateway: Gateway = None
+        self.connected_gateway: Gateway | None = None
         self.links: List[Link] = []
         self.distance: int = 0
 
