@@ -104,12 +104,12 @@ class Game:
         if (current_position not in self.elevator_positions and self.is_valid_position(
                 target_position) and time < self.remaining_turns - 5 and can_block):
             new_state = (target_position, entity.y, entity.remaining_clones - 1, entity.remaining_elevators,
-                         1 - entity.direction.value)
+                         1 - entity.direction.value())
             if new_state not in self.visited_states:
                 action = "BLOCK" if time == 0 else entity.action_history
                 self.action_queues[time + 4].append(
                     GameEntity(target_position, entity.y, entity.remaining_clones - 1, entity.remaining_elevators,
-                               MovementDirection(1 - entity.direction.value), action))
+                               MovementDirection(1 - entity.direction.value()), action))
                 self.mark_state_visited(*new_state)
 
     # Fonction qui évalue la faisabilité de l'action "ELEVATOR"
@@ -159,7 +159,7 @@ class Game:
         # On initialise avec l'état actuel du jeu
         self.action_queues[0].append(current_state)
         self.mark_state_visited(current_state.x, current_state.y, current_state.remaining_clones,
-                                current_state.remaining_elevators, current_state.direction.value)
+                                current_state.remaining_elevators, current_state.direction.value())
 
         # On cherche un chemin pour atteindre la sortie
         for time in range(self.remaining_turns):
