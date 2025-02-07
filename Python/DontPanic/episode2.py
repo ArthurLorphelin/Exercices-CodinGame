@@ -19,7 +19,7 @@ class GameEntity:
     remaining_clones: int
     remaining_elevators: int
     direction: MovementDirection
-    action_history: str  # Les actions qui ont permis d'arrivé à cet état
+    action_history: str  # Les actions qui ont permis d'arriver à cet état
 
 
 # Class principale du jeu qui gère la logique et la gestion de l'état
