@@ -54,37 +54,43 @@ Les exercices sont disponibles en Python, dans les dossiers à leur nom.
 
 ## Exercices Medium
 
-### 1. There is no spoon - Episode 1
+### 1. Shadows of the night - Episode 1
+**Lien :** [https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1](https://www.codingame.com/training/medium/shadows-of-the-knight-episode-1)
+
+**Résoud par :** 94 973 Codingamers
+
+
+### 2. There is no spoon - Episode 1
 **Lien :** [https://www.codingame.com/training/medium/there-is-no-spoon-episode-1](https://www.codingame.com/training/medium/there-is-no-spoon-episode-1)
 
 **Résoud par :** 78 210 Codingamers
 
 
-### 2. Death First Search - Episode 1
+### 3. Death First Search - Episode 1
 **Lien :** [https://www.codingame.com/training/medium/death-first-search-episode-1](https://www.codingame.com/training/medium/death-first-search-episode-1)
 
 **Résoud par :** 48 312 Codingamers
 
 
-### 3. Don't panic - Episode 1
+### 4. Don't panic - Episode 1
 **Lien :** [https://www.codingame.com/training/medium/don%27t-panic-episode-1](https://www.codingame.com/training/medium/don%27t-panic-episode-1)
 
 **Résoud par :** 39 558 Codingamers
 
 
-### 4. The Fall - Episode 1
+### 5. The Fall - Episode 1
 **Lien :** [https://www.codingame.com/training/medium/the-fall-episode-1](https://www.codingame.com/training/medium/the-fall-episode-1)
 
 **Résoud par :** 21 634 Codingamers
 
 
-### 5. Mars Lander - Episode 2
+### 6. Mars Lander - Episode 2
 **Lien :** [https://www.codingame.com/training/medium/mars-lander-episode-2](https://www.codingame.com/training/medium/mars-lander-episode-2)
 
 **Résoud par :** 14 435 Codingamers
 
 
-### 6. Blunder - Episode 1
+### 7. Blunder - Episode 1
 **Lien :** [https://www.codingame.com/training/medium/blunder-episode-1](https://www.codingame.com/training/medium/blunder-episode-1)
 
 **Résoud par :** 11 690 Codingamers
