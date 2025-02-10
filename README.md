@@ -103,6 +103,7 @@ Les exercices sont disponibles en Python, dans les dossiers à leur nom.
 **Lien :** [https://www.codingame.com/training/hard/there-is-no-spoon-episode-2](https://www.codingame.com/training/hard/there-is-no-spoon-episode-2)
 
 **Résoud par :** 1 525 Codingamers
+
 **Taux de réussite :** 70%
 
 
